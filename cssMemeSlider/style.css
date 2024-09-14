@@ -5,15 +5,15 @@
 }
 
 .container{
-    max-width: 1280px;
-    height: 600px;
+    max-width: 640px;
+    height: 520px;
     padding: 20px;
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    
+    flex-wrap: wrap;
 }
 
 
@@ -29,33 +29,34 @@
 }
 
 
-
-.slide-img {  
-    width: 550px;
-    height: 550px;
-    min-width: 100%;
-}
-
 .content {
-    max-width: 550px;
+    width: 100%;
+    max-width: 600px;
+    height: 50px;
     display: flex;
-    justify-content: space-between;
-    
+    justify-content: space-between; 
+    flex-wrap: wrap;   
 }
+
+.text{
+    flex-basis: 70%;
+
+}
+
 
 
 .indicators {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 0.7rem;
 }
 
 .indicator {
-    width: 10px;
-    height: 10px;
+    width: 0.7rem; /* Относительная единица */
+    height: 0.7rem; /* Относительная единица */
     background-color: #ccc;
     border-radius: 50%;
-    margin: 0 5px;
+    margin: 0 0.3rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -72,4 +73,12 @@
 
 .indicator.active {
     background-color: #000;
+}
+
+
+@media (max-width: 640px) {
+    .indicators {
+        align-self: flex-start; /* Этот элемент перепрыгнет на новый ряд */
+      }
+       
 }
