@@ -38,10 +38,10 @@
     flex-wrap: wrap;   
 }
 
-.text{
-    flex-basis: 70%;
 
-}
+.new-string {
+    width: 10%;
+  }
 
 
 
@@ -77,8 +77,25 @@
 
 
 @media (max-width: 640px) {
-    .indicators {
-        align-self: flex-start; /* Этот элемент перепрыгнет на новый ряд */
+    .container{
+    justify-content: center;      
+    }
+
+    .content {
+        justify-content: center;
+    }
+
+    .new-string {
+        width: 100%;
       }
+    
+    .indicators {
+        order: 2;
+      }
+
+    .text {
+        width: 90%;
+        order: 3;
+    }
        
 }
