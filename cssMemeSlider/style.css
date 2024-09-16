@@ -4,81 +4,89 @@
     box-sizing: border-box;
 }
 
-.container{
-    max-width: 640px;
-    height: 520px;
-    padding: 20px;
-    margin: auto;
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
 }
 
-
-.slider-container {
-    width: 100%;
-    max-width: 600px;
+.container{
+    padding-top: 20px;
+    height: 600px;
+    width: 600px;
     overflow: hidden;
+
+   
 }
 
 .slider {
+    height: 100%;
+    width: 400%;
     display: flex;
-    transition: transform 0.5s ease-in-out;
 }
 
+.slide-img{
+    height: 80%;
+    width: 25%;
+    object-fit: cover;
+    transition: 3s;
 
-.content {
-    width: 100%;
-    max-width: 600px;
-    height: 50px;
-    display: flex;
-    justify-content: space-between; 
-    flex-wrap: wrap;   
 }
 
-
-.new-string {
-    width: 10%;
-  }
-
-
-
-.indicators {
-    display: flex;
-    justify-content: center;
-    margin-top: 0.7rem;
+input{
+    display: none;
 }
 
-.indicator {
-    width: 0.7rem; /* Относительная единица */
-    height: 0.7rem; /* Относительная единица */
-    background-color: #ccc;
+.buttons {
+    position: absolute;
+    bottom: 10%; left:50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+label {
+    height: 25px;
+    width: 25px;
+    border: 3px solid white;
     border-radius: 50%;
-    margin: 0 0.3rem;
+    box-shadow: 0px 0px 5px black;
+    inset: 0px 0px 5px black;
+    margin: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: .9s;
+
 }
 
-.indicator:hover {
-    background-color: #999;
-    transform: scale(1.2);
+label:hover {
+    background-color: black;
 }
 
-.indicator:active {
-    background-color: #666;
-    transform: scale(0.9);
+#slide1:checked ~ .container > .slider > img:nth-child(1){
+    margin-left: -0%;
+}
+#slide2:checked ~ .container > .slider > img:nth-child(2){
+    margin-left: -25%;
+}
+#slide3:checked ~ .container > .slider > img:nth-child(3){
+    margin-left: -50%;
+}
+#slide4:checked ~ .container > .slider > img:nth-child(4){
+    margin-left: -75%;
 }
 
-.indicator.active {
-    background-color: #000;
-}
 
 
 @media (max-width: 640px) {
-    .container{
-    justify-content: center;      
+    .container {
+        justify-content: center;
     }
 
     .content {
@@ -87,15 +95,15 @@
 
     .new-string {
         width: 100%;
-      }
-    
+    }
+
     .indicators {
         order: 2;
-      }
+    }
 
     .text {
         width: 90%;
         order: 3;
     }
-       
+
 }
