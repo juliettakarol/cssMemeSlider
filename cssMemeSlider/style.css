@@ -112,6 +112,27 @@ label:active {
     opacity: 1;
 }
 
+
+.caption {
+    display: none; /* Скрываем все по умолчанию */
+}
+
+#slide1:checked ~ .container .content #caption1 {
+    display: block;
+}
+
+#slide2:checked ~ .container .content #caption2 {
+    display: block;
+}
+
+#slide3:checked ~ .container .content #caption3 {
+    display: block;
+}
+
+#slide4:checked ~ .container .content #caption4 {
+    display: block;
+}
+
 #slide1:checked ~ .container .buttons label[for="slide1"],
 #slide2:checked ~ .container .buttons label[for="slide2"],
 #slide3:checked ~ .container .buttons label[for="slide3"],
